@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+  release:
+    types: [published]
+
 jobs:
   reassure:
     name: Make me happy
@@ -18,3 +21,11 @@ jobs:
         run: |
           cat file_1.txt
           cat file_2.txt
+
+      - name: Upload artifact
+        uses: softprops/action-gh-release@v1
+        if: github.event_name == 'release'
+        with:
+          files: |
+            file_1.txt
+            file_2.txt
