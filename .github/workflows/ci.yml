@@ -1,0 +1,19 @@
+name: CI project
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  reassure:
+    name: Make me happy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cat files
+        run: |
+          cat file_1.txt
+          cat file_2.txt
