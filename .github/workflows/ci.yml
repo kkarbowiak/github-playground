@@ -11,7 +11,8 @@ on:
 
 jobs:
   reassure:
-    permissions: write-all
+    permissions:
+      contents: write
     name: Make me happy
     runs-on: ubuntu-latest
     steps:
